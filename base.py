@@ -1,7 +1,7 @@
 import json
 import urllib.request
 
-Geolocation_key = "AIzaSyBpXnSW_D-3lUUWdP24_HavgNwDMO0o0lI" #apiキー 
+Geolocation_key = "" #apiキー
 url = "https://www.googleapis.com/geolocation/v1/geolocate?key="+ Geolocation_key
 obj = {
 }
