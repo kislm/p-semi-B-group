@@ -1,0 +1,23 @@
+<html>
+  <head><title>P講習Bグループ</title></head>
+  <script type="text/javascript" src="http://maps.google.com/maps?file=api&v=2&key=APIKey"> <!--左にAPIキーを入れる:AIzaSyBpXnSW_D-3lUUWdP24_HavgNwDMO0o0lI-->
+  </script>
+  <script type="text/javascript">
+  var pe = {};
+  function initPlaceEngine() {
+  if (GBrowserIsCompatible()){
+      gmap = new GMap2(document.getElementById("map"));
+      // 緯度、経度、拡大率(16)を指定
+      gmap.setCenter(new GLatLng({{ lat }}, {{ lng }}), 16);
+      }
+  }
+  </script>
+  <body onLoad="initPlaceEngine()" onunload="GUnload()">
+    <h2>IPアドレスから現在地を取得する</h2>
+    <p>緯度は {{ lat }}</p>
+    <p>経度は {{ lng }}</p>
+    <p>誤差の範囲は半径 {{ radius }} m</p>
+    地図は<a href="{{ link }}" target="_blank">こちら</a>です。
+    <div id="map" style="width:500px;height:300px">地図が表示できません</div>
+  </body>
+</html>

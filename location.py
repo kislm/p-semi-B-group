@@ -4,12 +4,18 @@ import base
 #appにFlaskを定義して使えるようにする
 app = Flask(__name__)
 
-@app.route('/index/')
+@app.route("/")
+def top():
+    return render_template("top.html")
+
+
+@app.route('/home/')
 def locate():
     lat = base.dict.get("lat")
     lng = base.dict.get("lng")
     radius = base.dict.get("radius")
-    return render_template('index.html', lat=lat,lng=lng,radius=radius)
+    link = "https://www.google.com/maps/@" + lat + "," + lng + ",16z"
+    return render_template('home.html', lat=lat,lng=lng,radius=radius,link=link)
 
 
 if __name__ == "__main__":
