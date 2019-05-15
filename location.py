@@ -5,8 +5,8 @@ import base
 app = Flask(__name__)
 
 @app.route("/")
-def top():
-    return render_template("top.html")
+def index():
+    return render_template("index.html")
 
 
 @app.route('/home/')
